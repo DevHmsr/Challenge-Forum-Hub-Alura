@@ -59,8 +59,6 @@ A coleção de requisições pode ser importada no Insomnia ou Postman. Certifiq
 
 ---
 
----
-
 ## 🎥 Demonstração da API
 
 Veja abaixo alguns exemplos de requisições realizadas com o Insomnia:
@@ -90,7 +88,7 @@ Veja abaixo alguns exemplos de requisições realizadas com o Insomnia:
 
 > ⚠️ Os GIFs foram gravados com [ScreenToGif](https://www.screentogif.com/). As credenciais e tokens são fictícios.
 
-
+---
 
 ## 🗃️ Migrations (Flyway)
 
