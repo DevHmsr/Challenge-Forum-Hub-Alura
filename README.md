@@ -59,6 +59,37 @@ A coleção de requisições pode ser importada no Insomnia ou Postman. Certifiq
 
 ---
 
+---
+
+## 🎥 Demonstração da API
+
+Veja abaixo alguns exemplos de requisições realizadas com o Insomnia:
+
+### 🔐 Autenticação
+
+![Image](https://github.com/user-attachments/assets/6eac2de8-622b-4d1e-a76d-294bdbad001f)
+
+### 📝 Criação de tópico
+
+![Image](https://github.com/user-attachments/assets/b5510974-2945-44eb-a11d-a21b42a4b1d1)
+
+### 📋 Listagem de tópicos
+
+![Image](https://github.com/user-attachments/assets/4e65d845-c453-4d04-8b9b-c90ad5ccfd86)
+
+![Image](https://github.com/user-attachments/assets/65661776-c613-4edb-b5bd-0237b289f4fe)
+
+### 🔄 Atualização de tópico
+
+![Image](https://github.com/user-attachments/assets/d1558564-dfca-460b-a51f-cd58585f189c)
+### ❌ Exclusão de tópico
+
+![Image](https://github.com/user-attachments/assets/8bbac248-72fb-44a0-801c-9f05a97964d5)
+
+> ⚠️ Os GIFs foram gravados com [ScreenToGif](https://www.screentogif.com/). As credenciais e tokens são fictícios.
+
+
+
 ## 🗃️ Migrations (Flyway)
 
 As migrations SQL estão no diretório:
