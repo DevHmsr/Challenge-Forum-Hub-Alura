@@ -71,4 +71,10 @@ public class TratadorDeErros {
             this(erro, detalhe, status.value(), java.time.OffsetDateTime.now().toString());
         }
     }
+
+    @ExceptionHandler(ValidacaoException.class)
+    public ResponseEntity<MensagemErro> tratarValidacaoException(ValidacaoException ex) {
+        var erro = new MensagemErro("Erro de validação", ex.getMessage());
+        return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(erro);
+    }
 }

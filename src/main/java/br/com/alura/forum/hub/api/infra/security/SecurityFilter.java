@@ -12,6 +12,7 @@ import org.springframework.stereotype.Component;
 import org.springframework.web.filter.OncePerRequestFilter;
 
 import java.io.IOException;
+import java.time.OffsetDateTime;
 
 @Component
 public class SecurityFilter extends OncePerRequestFilter {
@@ -25,6 +26,9 @@ public class SecurityFilter extends OncePerRequestFilter {
     @Override
     protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response, FilterChain filterChain)
             throws ServletException, IOException {
+
+        var requestPath = request.getRequestURI();
+        var isLoginRequest = requestPath.equals("/login");
 
         var authHeader = request.getHeader("Authorization");
 
@@ -47,9 +51,28 @@ public class SecurityFilter extends OncePerRequestFilter {
             } catch (Exception e) {
                 response.setStatus(HttpServletResponse.SC_UNAUTHORIZED);
                 response.setContentType("application/json");
-                response.getWriter().write("{\"erro\": \"Token inválido ou expirado.\"}");
+                response.getWriter().write("{\"erro\": \"Token invalido ou expirado.\"}");
                 return;
             }
+        }
+
+        if (!isLoginRequest && SecurityContextHolder.getContext().getAuthentication() == null) {
+            response.setStatus(HttpServletResponse.SC_FORBIDDEN);
+            response.setContentType("application/json");
+
+            var json = """
+                    {
+                      "timestamp": "%s",
+                      "status": 403,
+                      "erro": "Forbidden",
+                      "mensagem": "Acesso negado",
+                      "detalhe": "Voce nao tem permissao para acessar este recurso.",
+                      "path": "%s"
+                    }
+                    """.formatted(OffsetDateTime.now(), request.getRequestURI());
+
+            response.getWriter().write(json);
+            return;
         }
 
         filterChain.doFilter(request, response);
