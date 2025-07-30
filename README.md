@@ -77,6 +77,8 @@ Veja abaixo alguns exemplos de requisições realizadas com o Insomnia:
 
 ![Image](https://github.com/user-attachments/assets/4e65d845-c453-4d04-8b9b-c90ad5ccfd86)
 
+### 📋 Listagem de tópico específico
+
 ![Image](https://github.com/user-attachments/assets/65661776-c613-4edb-b5bd-0237b289f4fe)
 
 ### 🔄 Atualização de tópico
