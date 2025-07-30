@@ -126,7 +126,7 @@ spring.jpa.show-sql=true
 spring.jpa.properties.hibernate.format_sql=true
 spring.jpa.properties.hibernate.dialect=org.hibernate.dialect.MySQL8Dialect
 
-api.security.secret=minhaChaveSecretaMuitoSegura1234567890
+api.security.secret=${JWT_SECRET:chave-de-teste-nao-usar-em-producao}
 ```
 
 Você também pode usar variáveis de ambiente (`FORUMHUB_DB_URL`, `FORUMHUB_DB_USERNAME`, etc.).
